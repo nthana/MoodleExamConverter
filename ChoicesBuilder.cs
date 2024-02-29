@@ -27,13 +27,17 @@ namespace MoodleExamConverter
                 choices.Add(cl.Get(i));
         }
 
+        private bool first;
         public string GetFullString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("{:MULTICHOICE:\r\n");
+            sb.Append("{:MULTICHOICE:");
+            if (!choices[0].RightAnswer)
+                sb.Append("\r\n");
+            first = true;
             foreach (var choice in choices)
             {
-                sb.Append("~");
+                AppendExceptFirst(sb);
                 sb.Append(CorrectCode(choice));
                 sb.AppendLine(choice.Text);
             }
@@ -41,7 +45,15 @@ namespace MoodleExamConverter
             return sb.ToString();
         }
 
-        private String CorrectCode(Choice choice)
+        private void AppendExceptFirst(StringBuilder sb)
+        {
+            if (first)
+                first = false;
+            else
+                sb.Append("~");
+        }
+
+        private string CorrectCode(Choice choice)
         {
             if (choice.RightAnswer)
                 return "=";

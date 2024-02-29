@@ -49,7 +49,7 @@ namespace MoodleExamConverter
                 correct = true;
                 start++;
             }
-            var choice = line.Substring(start, end - start);
+            var choice = line.Substring(start, end - start).Trim();
             choices.Add(new Choice(choice, correct));
         }
 

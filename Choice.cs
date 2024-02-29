@@ -16,5 +16,6 @@ namespace MoodleExamConverter
             Text = text;
             RightAnswer = rightAnswer;
         }
+
     }
 }

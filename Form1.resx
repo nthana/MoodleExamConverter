@@ -117,4 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="txtSource.Text" xml:space="preserve">
+    <value>1.	ภาษา Java จัดเป็นภาษาในกลุ่มใด ?
+a. Machine Language	b. Assembly Language	c. Low-Level Language	*d. High-Level Language
+2.	ภาษาที่เป็นต้นกำเนิดของ OOP คือภาษาใด ?
+*a. Simula	b. C++		c. C		d. Python
+3.	ข้อใดไม่ใช่องค์ประกอบของโปรแกรม ?
+a. Variable	*b. Processor	c. Subroutine	d. Function</value>
+  </data>
 </root>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             splitContainer1 = new SplitContainer();
             txtSource = new TextBox();
             txtDest = new TextBox();
@@ -65,7 +66,7 @@
             txtSource.ScrollBars = ScrollBars.Both;
             txtSource.Size = new Size(747, 719);
             txtSource.TabIndex = 0;
-            txtSource.Text = "-----Hello----\r\n\r\n1.\r\na. choiceA\r\nb. choiceB\r\nc. .....     *d. ...\r\n2.\r\na. 1111\r\n*b. 2222\r\nc. 3333\r\n3...\r\n";
+            txtSource.Text = resources.GetString("txtSource.Text");
             // 
             // txtDest
             // 

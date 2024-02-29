@@ -63,6 +63,7 @@ namespace MoodleExamConverter
         {
             sb = new StringBuilder();
             source = source.Replace("\r", "");
+            source = source.Replace("\t", " ");
             String[] inputs = source.Split('\n');
             TrimAll(inputs);
 
@@ -83,6 +84,7 @@ namespace MoodleExamConverter
                     choices.AddChoiceLine(input);
                 }
             }
+            InjectChoice();
 
             return sb.ToString();
         }

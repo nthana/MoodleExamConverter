@@ -34,6 +34,7 @@
             txtDest = new TextBox();
             btnConvert = new Button();
             btnRemoveBlankLine = new Button();
+            btnHelp = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -91,6 +92,7 @@
             // 
             // btnRemoveBlankLine
             // 
+            btnRemoveBlankLine.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnRemoveBlankLine.Location = new Point(1174, 744);
             btnRemoveBlankLine.Name = "btnRemoveBlankLine";
             btnRemoveBlankLine.Size = new Size(226, 34);
@@ -99,16 +101,28 @@
             btnRemoveBlankLine.UseVisualStyleBackColor = true;
             btnRemoveBlankLine.Click += btnRemoveBlankLine_Click;
             // 
+            // btnHelp
+            // 
+            btnHelp.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnHelp.Location = new Point(12, 745);
+            btnHelp.Name = "btnHelp";
+            btnHelp.Size = new Size(83, 34);
+            btnHelp.TabIndex = 3;
+            btnHelp.Text = "Help";
+            btnHelp.UseVisualStyleBackColor = true;
+            btnHelp.Click += btnHelp_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1544, 791);
+            Controls.Add(btnHelp);
             Controls.Add(btnRemoveBlankLine);
             Controls.Add(btnConvert);
             Controls.Add(splitContainer1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Moodle Exam Converter (by Thana)";
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
@@ -125,5 +139,6 @@
         private TextBox txtDest;
         private Button btnConvert;
         private Button btnRemoveBlankLine;
+        private Button btnHelp;
     }
 }

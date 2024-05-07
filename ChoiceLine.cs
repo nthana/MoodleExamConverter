@@ -64,18 +64,20 @@ namespace MoodleExamConverter
 
             char first = input[iStart];
             if (first != CorrectMarker)
-                return IsCharAndDot(iStart, input);
+                return IsCharDotSpace(iStart, input);
             else
-                return IsCharAndDot(iStart + 1, input);
+                return IsCharDotSpace(iStart + 1, input);
         }
 
         // เช่น a.
-        private static bool IsCharAndDot(int iStart, string input)
+        private static bool IsCharDotSpace(int iStart, string input)
         {
-            if (input.Length < 2 + iStart)
+            if (input.Length < 3 + iStart)
                 return false;
 
-            return Char.IsLetter(input[iStart]) && input[iStart + 1] == '.';
+            return  Char.IsLetter(input[iStart]) && 
+                    input[iStart + 1] == '.' && 
+                    input[iStart + 2] == ' ';
         }
 
     }

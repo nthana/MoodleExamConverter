@@ -17,5 +17,13 @@ namespace MoodleExamConverter
         {
 
         }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("A choice = a character + a dot + a space.\r\n" +
+                "The correct answer should be marked with '*' at the beginning.\r\n" +
+                "This program will generate the Moodle Multichoice format."
+                , "How To Use & Format");
+        }
     }
 }

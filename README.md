@@ -10,7 +10,8 @@ The correct answer should be marked with '*'. (ex. ""*a. "")
 ![image](https://github.com/user-attachments/assets/3a9b4306-21c3-49ec-913b-5ca425504701)
 
 Example
--------
+
+```
 1.	Question one ?
 a. Machine Language	
 b. Assembly Language	
@@ -19,5 +20,5 @@ c. Low-Level Language
 
 2.	Question two ?
 *a. choice one	b. choice two	c. choice three	d. choice four
-
+```
 

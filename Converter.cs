@@ -73,7 +73,7 @@ namespace MoodleExamConverter
                 string input = inputs[i];
                 if (input.StartsWith("---")) // comment line
                     continue;
-                if (!IsStartWithChoice(0, input)) // normal text: เช่นพวกโจทย์
+                if (!IsStartWithChoice(input)) // normal text: เช่นพวกโจทย์
                 {
                     InjectChoice();
                     sb.Append(input);
@@ -106,9 +106,9 @@ namespace MoodleExamConverter
             }
         }
 
-        private bool IsStartWithChoice(int iStart, string input)
+        private bool IsStartWithChoice(string input)
         {
-            return ChoiceLine.IsStartWithChoice(iStart, input);
+            return ChoiceLine.IsStartWithChoice(input);
         }
     }
 }

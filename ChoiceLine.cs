@@ -29,9 +29,16 @@ namespace MoodleExamConverter
 
         private void Split(string line)
         {
-            int iLast = 0;
-            for(int i=2; i < line.Length-1; i++)
+            if (!IsStartWithChoice(0, line))
+                return; // no choice
+
+            int iLast = 0;            
+            // เหตุที่เริ่มที่ 3 เพราะตำแหน่ง 0 เชื่อว่าเป็น choice แรกเสมอ
+            //    จึงพยายามหาจุดสิ้นสุดของข้อความแรก
+            for(int i=3; i < line.Length-1; i++)
             {
+                if (Char.IsLetter(line[i - 1])) // ตัวที่แล้วห้ามเป็น letter; ไม่งั้นห้ามเป็นการขึ้น choice ใหม่
+                    continue;   // เช่น spec.   ตรง "c." ไม่ถึงเป็น choice; แต่ spe c. แบบนี้ได้
                 if (!IsStartWithChoice(i, line))
                     continue;
                 AddChoice(line, iLast, i);
@@ -57,7 +64,11 @@ namespace MoodleExamConverter
         // ค่าที่เป็นไปได้เช่น
         // *a. 
         // a.   
-        public static bool IsStartWithChoice(int iStart, string input)
+        public static bool IsStartWithChoice(string input)
+        {
+            return IsStartWithChoice(0, input);
+        }
+        private static bool IsStartWithChoice(int iStart, string input)
         {
             if (input.Length < 2 + iStart)
                 return false;
@@ -75,7 +86,7 @@ namespace MoodleExamConverter
             if (input.Length < 3 + iStart)
                 return false;
 
-            return  Char.IsLetter(input[iStart]) && 
+            return  Char.IsLetter(input[iStart]) && // Char.IsLower(input[iStart]) && 
                     input[iStart + 1] == '.' && 
                     input[iStart + 2] == ' ';
         }

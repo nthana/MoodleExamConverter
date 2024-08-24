@@ -21,8 +21,8 @@ namespace MoodleExamConverter
 
         public void AddChoiceLine(string line)
         {
-            Debug.Assert(ChoiceLine.IsStartWithChoice(0, line));
             var cl = new ChoiceLine(line);
+            Debug.Assert(cl.Count() > 0);
             for (int i = 0; i < cl.Count(); ++i)
                 choices.Add(cl.Get(i));
         }

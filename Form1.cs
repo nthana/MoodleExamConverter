@@ -38,9 +38,15 @@ namespace MoodleExamConverter
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("A choice = an alphabet + a dot + a space. (ex. \"a. \")\r\n" +
-                "The correct answer should be marked with '*'. (ex. \"*a. \") \r\n" +
-                "This program will generate the Moodle Multichoice format.\r\n"
+            MessageBox.Show(
+@"1) Normal line: does not start with ""letter + dot + space"" (ex. ""a. "")
+2) Choice line: starts with a letter + dot + space (ex. ""a. "")
+A choice line can have more than one choice.
+
+The correct answer should be marked with '*'. (ex. ""*a. "")
+
+This program will generate the Moodle Multichoice format.
+"
                 , "How To Use & Format");
         }
     }

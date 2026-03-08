@@ -19,6 +19,12 @@ namespace MoodleExamConverter
             choices.Clear();
         }
 
+        private bool bRemoveChoiceLetter;
+        public ChoicesBuilder(bool bRemoveChoiceLetter)
+        {
+            this.bRemoveChoiceLetter = bRemoveChoiceLetter;
+        }
+
         public void AddChoiceLine(string line)
         {
             var cl = new ChoiceLine(line);
@@ -39,7 +45,7 @@ namespace MoodleExamConverter
             {
                 AppendExceptFirst(sb);
                 sb.Append(CorrectCode(choice));
-                sb.AppendLine(choice.Text);
+                sb.AppendLine(choice.GetText(bRemoveChoiceLetter));
             }
             sb.Append("}\r\n");
             return sb.ToString();

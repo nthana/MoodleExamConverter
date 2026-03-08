@@ -27,7 +27,7 @@ namespace MoodleExamConverter
         private void btnConvert_Click(object sender, EventArgs e)
         {
             var converter = new Converter();
-            txtDest.Text = converter.Convert(txtSource.Text);
+            txtDest.Text = converter.Convert(txtSource.Text, chkRemoveChoiceLetter.Checked);
         }
 
         private void btnRemoveBlankLine_Click(object sender, EventArgs e)
@@ -46,6 +46,8 @@ A choice line can have more than one choice.
 The correct answer should be marked with '*'. (ex. ""*a. "")
 
 This program will generate the Moodle Multichoice format.
+
+v.1.2 Add option to remove choice letters.
 "
                 , "How To Use & Format");
         }

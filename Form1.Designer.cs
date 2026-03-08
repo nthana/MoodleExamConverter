@@ -35,6 +35,7 @@
             btnConvert = new Button();
             btnRemoveBlankLine = new Button();
             btnHelp = new Button();
+            chkRemoveChoiceLetter = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -112,11 +113,22 @@
             btnHelp.UseVisualStyleBackColor = true;
             btnHelp.Click += btnHelp_Click;
             // 
+            // chkRemoveChoiceLetter
+            // 
+            chkRemoveChoiceLetter.AutoSize = true;
+            chkRemoveChoiceLetter.Location = new Point(144, 745);
+            chkRemoveChoiceLetter.Name = "chkRemoveChoiceLetter";
+            chkRemoveChoiceLetter.Size = new Size(209, 29);
+            chkRemoveChoiceLetter.TabIndex = 4;
+            chkRemoveChoiceLetter.Text = "Remove Choice Letter";
+            chkRemoveChoiceLetter.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1544, 791);
+            Controls.Add(chkRemoveChoiceLetter);
             Controls.Add(btnHelp);
             Controls.Add(btnRemoveBlankLine);
             Controls.Add(btnConvert);
@@ -131,6 +143,7 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -141,5 +154,6 @@
         private Button btnConvert;
         private Button btnRemoveBlankLine;
         private Button btnHelp;
+        private CheckBox chkRemoveChoiceLetter;
     }
 }

@@ -17,5 +17,12 @@ namespace MoodleExamConverter
             RightAnswer = rightAnswer;
         }
 
+        public string GetText(bool bRemoveChoiceLetter)
+        {
+            if(!bRemoveChoiceLetter)
+                return Text;
+
+            return Text.Substring(3);
+        }
     }
 }

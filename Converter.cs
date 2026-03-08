@@ -59,7 +59,7 @@ namespace MoodleExamConverter
 
         private ChoicesBuilder choices;
         StringBuilder sb;
-        public string Convert(string source)
+        public string Convert(string source, bool bRemoveChoiceLetter)
         {
             sb = new StringBuilder();
             source = source.Replace("\r", "");
@@ -67,7 +67,7 @@ namespace MoodleExamConverter
             String[] inputs = source.Split('\n');
             TrimAll(inputs);
 
-            choices = new ChoicesBuilder();
+            choices = new ChoicesBuilder(bRemoveChoiceLetter);
             for (int i = 0; i < inputs.Length; ++i)
             {
                 string input = inputs[i];

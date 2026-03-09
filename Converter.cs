@@ -57,31 +57,39 @@ namespace MoodleExamConverter
         // ถ้าเจอพวก a. ขึ้นต้น ถือเป้น choice  ถ้าขึ้นด้วยแบบอื่น แค่แสดงผลออกไปปกติ
         // บรรทัดที่มี choice ต้องอยู่ติดๆ กัน ห้ามมีบรรทัดปกติคั่น
 
+        private string Replace(string source)
+        {
+            source = source.Replace("\t", " ");
+            //source = source.Replace("{", "&#123;");
+            source = source.Replace("}", "&#125;");
+            return source;
+        }
+
         private ChoicesBuilder choices;
         StringBuilder sb;
         public string Convert(string source, bool bRemoveChoiceLetter)
         {
             sb = new StringBuilder();
             source = source.Replace("\r", "");
-            source = source.Replace("\t", " ");
-            String[] inputs = source.Split('\n');
-            TrimAll(inputs);
+            source = Replace(source);
+            String[] lines = source.Split('\n');
+            TrimAll(lines);
 
             choices = new ChoicesBuilder(bRemoveChoiceLetter);
-            for (int i = 0; i < inputs.Length; ++i)
+            for (int i = 0; i < lines.Length; ++i)
             {
-                string input = inputs[i];
-                if (input.StartsWith("---")) // comment line
+                string line = lines[i];
+                if (line.StartsWith("---")) // comment line
                     continue;
-                if (!IsStartWithChoice(input)) // normal text: เช่นพวกโจทย์
+                if (!IsStartWithChoice(line)) // normal text: เช่นพวกโจทย์
                 {
                     InjectChoice();
-                    sb.Append(input);
+                    sb.Append(line);
                     sb.Append("\r\n");
                 }
                 else
                 {
-                    choices.AddChoiceLine(input);
+                    choices.AddChoiceLine(line);
                 }
             }
             InjectChoice();

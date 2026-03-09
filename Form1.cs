@@ -48,6 +48,7 @@ The correct answer should be marked with '*'. (ex. ""*a. "")
 This program will generate the Moodle Multichoice format.
 
 v.1.2 Add option to remove choice letters.
+v.1.2.1 Add replace '}' to &#125;
 "
                 , "How To Use & Format");
         }
